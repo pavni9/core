@@ -10,10 +10,25 @@ public class PerfectFactors {
 		//eg: 121, return null, even thought 121 = 11^2, 11 is greaterthan 9
 		//eg: 40, return null
 		
+		int count =0;
+		int temp=number;
+		for (int i=2;i<=9;i++){
+			temp=number;
+			while(temp!=1) {
+			if((temp%i) == 0){
+				temp=temp%i;
+				count++;
+				if(temp==1){
+					return new int[] {i,count};
+				}
+			}
+			else {
+				count =0;
+			}
+		}
+		}
 		return null;
-
+	
+	}
 	}
 
-	
-
-}
